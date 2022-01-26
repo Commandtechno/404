@@ -1,0 +1,112 @@
+<script>
+  const images = [
+    "calm.webp",
+    "click.webp",
+    "computer.webp",
+    "corn.webp",
+    "crazy.webp",
+    "dance.webp",
+    "flop.webp",
+    "hoverboard.webp",
+    "ping_pong.webp",
+    "selfie.webp",
+    "skateboard.webp",
+    "stare.webp",
+    "stare2.webp",
+    "stare3.webp",
+    "water.webp"
+  ];
+
+  const colors = [
+    "FBF8CC",
+    "FDE4CF",
+    "FFCFD2",
+    "F1C0E8",
+    "CFBAF0",
+    "A3C4F3",
+    "90DBF4",
+    "8EECF5",
+    "98F5E1",
+    "B9FBC0"
+  ];
+
+  const titles = [
+    "You look lost",
+    "Uh oh, a 404",
+    "This page doesn't exist",
+    "Could not find that page",
+    "How'd you get here?"
+  ];
+
+  window.onload = () => {
+    // image
+    const imageElement = document.getElementById("image");
+    imageElement.src = "/static/404/" + images[Math.floor(Math.random() * images.length)];
+
+    // title
+    const titleElement = document.getElementById("title");
+    titleElement.innerText = titles[Math.floor(Math.random() * titles.length)];
+
+    // color
+    document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+  };
+</script>
+
+<style>
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  #container {
+    width: calc(100% - 25px - 25px);
+    height: calc(100% - 25px - 25px);
+    padding: 25px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #image {
+    width: 100%;
+    height: 100%;
+
+    max-width: 500px;
+    max-height: 500px;
+
+    object-fit: contain;
+  }
+
+  #title,
+  #description {
+    margin: 0;
+    color: black;
+    font-family: "Robot Mono", monospace;
+  }
+
+  #title {
+    margin-top: 25px;
+
+    font-size: 250%;
+    font-weight: bold;
+  }
+
+  #description {
+    margin-top: 10px;
+    font-size: 100%;
+  }
+</style>
+
+<body>
+  <div id="container">
+    <a href="/"><img id="image" /></a>
+    <h1 id="title"></h1>
+    <h3 id="description">Click the cat to return to home</h3>
+  </div>
+</body>
