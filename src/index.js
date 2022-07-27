@@ -46,7 +46,7 @@ function $(id) {
 }
 
 // image
-$("image").src = "/assets/" + rand(IMAGES);
+$("image").src = "/404/assets/" + rand(IMAGES);
 
 // title
 $("title").innerText = rand(TITLES);
