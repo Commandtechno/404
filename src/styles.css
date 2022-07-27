@@ -1,0 +1,42 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+#container {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  color: black;
+  font-family: "Robot Mono", monospace;
+}
+
+#image {
+  width: 100%;
+  height: 100%;
+
+  max-width: 500px;
+  max-height: 500px;
+
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+#title {
+  margin: 0;
+  font-size: 250%;
+  font-weight: bold;
+}
+
+#description {
+  margin: 0;
+  font-size: 100%;
+}

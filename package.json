@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "dev": "parcel ./src/index.html --dist-dir ./build",
+    "build": "parcel build ./src/index.html --dist-dir ./build",
+    "postbuild": "node ./scripts/postbuild.js"
+  },
+  "dependencies": {
+    "parcel": "^2.6.2"
+  }
+}
