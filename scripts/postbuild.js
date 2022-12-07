@@ -2,6 +2,8 @@ const { readdirSync, existsSync, mkdirSync } = require("fs");
 const { resolve, extname } = require("path");
 const { execFile } = require("child_process");
 
+const FFMPEG = require("ffmpeg-static");
+
 const INPUT_DIR = resolve(__dirname, "..", "assets");
 const OUTPUT_DIR = resolve(__dirname, "..", "build", "assets");
 
@@ -15,7 +17,7 @@ for (const file of readdirSync(INPUT_DIR)) {
 
   if (!existsSync(output)) {
     console.log(`Processing ${file}...`);
-    execFile("ffmpeg", [
+    execFile(FFMPEG, [
       "-i",
       input,
       "-vf",
@@ -23,6 +25,8 @@ for (const file of readdirSync(INPUT_DIR)) {
       "-loop",
       "0",
       output
-    ]).on("close", () => console.log(`Finished processing ${file}`));
+    ])
+      .on("error", err => console.error(err))
+      .on("close", () => console.log(`Finished processing ${file}`));
   }
 }

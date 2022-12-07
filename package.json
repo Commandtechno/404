@@ -5,6 +5,7 @@
     "postbuild": "node ./scripts/postbuild.js"
   },
   "dependencies": {
+    "ffmpeg-static": "^5.1.0",
     "parcel": "^2.6.2"
   }
 }
