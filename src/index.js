@@ -66,6 +66,6 @@ const rand = arr => arr[Math.floor(Math.random() * arr.length)];
 const $ = id => document.getElementById(id);
 
 // actual rendering
-$("image").src = "/assets/" + rand(IMAGES);
+$("image").src = "/404/assets/" + rand(IMAGES);
 $("title").innerText = rand(TITLES);
 document.body.style.backgroundColor = "#" + rand(COLORS);
