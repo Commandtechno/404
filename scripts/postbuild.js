@@ -1,6 +1,6 @@
-const { resolve, extname } = require("path");
 const { readdirSync, existsSync, mkdirSync } = require("fs");
-const { execFileSync } = require("child_process");
+const { resolve, extname } = require("path");
+const { execFile } = require("child_process");
 
 const INPUT_DIR = resolve(__dirname, "..", "assets");
 const OUTPUT_DIR = resolve(__dirname, "..", "build", "assets");
@@ -15,7 +15,7 @@ for (const file of readdirSync(INPUT_DIR)) {
 
   if (!existsSync(output)) {
     console.log(`Processing ${file}...`);
-    execFileSync("ffmpeg", [
+    execFile("ffmpeg", [
       "-i",
       input,
       "-vf",
@@ -23,6 +23,6 @@ for (const file of readdirSync(INPUT_DIR)) {
       "-loop",
       "0",
       output
-    ]);
+    ]).on("close", () => console.log(`Finished processing ${file}`));
   }
 }
