@@ -16,7 +16,7 @@ for (const file of readdirSync(INPUT_DIR)) {
   const output = resolve(OUTPUT_DIR, file.replace(extname(file), ".webp"));
 
   if (!existsSync(output)) {
-    console.log(`Processing ${file}...`);
+    console.log(`Converting ${file}...`);
     execFile(FFMPEG, [
       "-i",
       input,
@@ -27,6 +27,6 @@ for (const file of readdirSync(INPUT_DIR)) {
       output
     ])
       .on("error", err => console.error(err))
-      .on("close", () => console.log(`Finished processing ${file}`));
+      .on("close", () => console.log(`Converted ${file}`));
   }
 }

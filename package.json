@@ -1,11 +1,10 @@
 {
   "scripts": {
-    "dev": "parcel ./src/index.html --dist-dir ./build",
-    "build": "parcel build ./src/index.html --dist-dir ./build",
+    "build": "node ./scripts/build.js",
     "postbuild": "node ./scripts/postbuild.js"
   },
   "dependencies": {
-    "ffmpeg-static": "^5.1.0",
-    "parcel": "^2.6.2"
+    "esbuild": "^0.19.2",
+    "ffmpeg-static": "^5.1.0"
   }
 }
