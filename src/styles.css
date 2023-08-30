@@ -16,7 +16,7 @@ body {
   box-sizing: border-box;
   text-align: center;
   color: black;
-  font-family: "Robot Mono", monospace;
+  font-family: "Roboto Mono", monospace;
 }
 
 #image {
@@ -28,6 +28,12 @@ body {
 
   object-fit: contain;
   border-radius: 10px;
+
+  transition: transform 0.25s ease;
+}
+
+#image:hover {
+  transform: scale(1.05);
 }
 
 #title {
